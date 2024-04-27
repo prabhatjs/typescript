@@ -22,3 +22,39 @@ function first(cb) {
 first(function () {
     console.log('run after 1 sec');
 });
+//------Interface-----------------
+const student = {
+    name: "Parbhat",
+    class: '12-B',
+    age: 19,
+    email: '1009prbaht@gmail.com'
+};
+//function takes an argument---------------------------
+function validageToWatchMovie(age) {
+    if (age > 14) {
+        return 'valid';
+    }
+    else {
+        return 'invalid';
+    }
+}
+let checke = validageToWatchMovie(10);
+console.log(checke);
+function InterfaceCheck(student) {
+    if (student.age > 14) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(InterfaceCheck({
+    firstname: "Nafar",
+    lastname: "Khan",
+    age: 10,
+    email: "!86d6@gmail.com"
+}));
+function greet(student) {
+    console.log("email--", student.email);
+}
+console.log(greet(student));
