@@ -15,3 +15,5 @@ interface Person {
   age: number;
 }
 ``````````````````
+#types
+Types this is like interface types let you aggregate data together,types not to use as implement in classes only interface are implements

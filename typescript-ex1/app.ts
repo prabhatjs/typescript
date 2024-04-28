@@ -139,3 +139,62 @@ console.log(sm.name);
 sm.message("hello");
 console.log(e.name);
 e.message("Hello");
+
+//Types this is like interface types let you aggregate data together,types not to use as implement in classes only interface are implements
+
+type Students={
+    FirstName:string;
+    LastName:string;
+    age:number
+}
+
+//unions
+
+//print the user pan number which can be number or string;
+
+type pannumber=string|number
+
+function User(pannumber:pannumber)
+{
+    console.log(pannumber)
+}
+
+User('ABC123');
+User(1903836);
+
+
+//intersections-- you can intersect between types and interface you can use both of them with types using intersection
+
+interface GlobalUnit{
+    name:string;
+    age:number;
+}
+
+type KanpurUnit={
+    name:string;
+    punchTime:Date;
+}
+
+type KanpurUsers =  KanpurUnit & GlobalUnit;
+const GUser:KanpurUsers={
+    name:"Jay Shankar",
+    age:30,
+    punchTime:new Date()    
+}
+console.log(GUser); 
+
+//array 
+function maValue(arr:number[]){
+    let maxvalue=0
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>maxvalue)
+            {
+                maxvalue=arr[i];
+            }
+    }
+    return maxvalue;
+}
+
+let num:number=maValue([1,2,3,4]);
+console.log(num);
+

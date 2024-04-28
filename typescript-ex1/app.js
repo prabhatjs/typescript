@@ -89,3 +89,26 @@ console.log(sm.name);
 sm.message("hello");
 console.log(e.name);
 e.message("Hello");
+function User(pannumber) {
+    console.log(pannumber);
+}
+User('ABC123');
+User(1903836);
+const GUser = {
+    name: "Jay Shankar",
+    age: 30,
+    punchTime: new Date()
+};
+console.log(GUser);
+//array 
+function maValue(arr) {
+    let maxvalue = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > maxvalue) {
+            maxvalue = arr[i];
+        }
+    }
+    return maxvalue;
+}
+let num = maValue([1, 2, 3, 4]);
+console.log(num);
