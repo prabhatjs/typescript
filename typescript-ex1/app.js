@@ -23,7 +23,7 @@ first(function () {
     console.log('run after 1 sec');
 });
 //------Interface-----------------
-const student = {
+const student19 = {
     name: "Parbhat",
     class: '12-B',
     age: 19,
@@ -40,6 +40,7 @@ function validageToWatchMovie(age) {
 }
 let checke = validageToWatchMovie(10);
 console.log(checke);
+;
 function InterfaceCheck(student) {
     if (student.age > 14) {
         return true;
@@ -51,10 +52,40 @@ function InterfaceCheck(student) {
 console.log(InterfaceCheck({
     firstname: "Nafar",
     lastname: "Khan",
-    age: 10,
-    email: "!86d6@gmail.com"
+    age: 100,
+    email: "186d6@gmail.com"
 }));
 function greet(student) {
     console.log("email--", student.email);
 }
-console.log(greet(student));
+console.log(greet({
+    firstname: "Nafar",
+    lastname: "Khan",
+    age: 100,
+    email: "199d6@gmail.com"
+}));
+class Employee {
+    constructor(n, a) {
+        this.name = n;
+        this.age = a;
+    }
+    message(phrase) {
+        console.log(`${phrase} ${this.name}`);
+    }
+}
+class SeniorManagers {
+    constructor(n, a, s) {
+        this.name = n;
+        this.age = a;
+        this.salary = s;
+    }
+    message(phrase) {
+        console.log(`${phrase} ${this.name} you salary is ${this.salary}`);
+    }
+}
+const e = new Employee("Psy", 24);
+const sm = new SeniorManagers('Alok', 55, 300000);
+console.log(sm.name);
+sm.message("hello");
+console.log(e.name);
+e.message("Hello");

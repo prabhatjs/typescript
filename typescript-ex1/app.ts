@@ -33,14 +33,14 @@ first(function(){
 
 //------Interface-----------------
 
-const student={
+const student19={
     name:"Parbhat",
     class:'12-B',
     age:19,
     email:'1009prbaht@gmail.com'
 }
 
-interface student{
+interface student19{
     name:string,
     class:string,
     age:number,
@@ -62,12 +62,13 @@ let checke=validageToWatchMovie(10);
 console.log(checke);
 
 
-function InterfaceCheck(student:{
+interface student{
     firstname:string,
     lastname:string,
     age:number,
     email:string
-}){
+};
+function InterfaceCheck(student:student){
     if(student.age>14){
         return true;
     }else{
@@ -78,8 +79,8 @@ function InterfaceCheck(student:{
 console.log(InterfaceCheck({
     firstname:"Nafar",
     lastname:"Khan",
-    age:10,
-    email:"!86d6@gmail.com"
+    age:100,
+    email:"186d6@gmail.com"
 
 }))
 
@@ -87,4 +88,54 @@ function greet(student:student){
     console.log("email--",student.email);
 }
 
-console.log(greet(student));
+console.log(greet({
+    firstname:"Nafar",
+    lastname:"Khan",
+    age:100,
+    email:"199d6@gmail.com"
+
+}));
+
+//implement interfcae
+
+interface Person{
+    name:string,
+    age:number,
+    message(phrase:string):void;//message take an argument string type
+}
+
+class Employee implements Person{
+    name:string;
+    age:number;
+
+    constructor(n:string,a:number){
+        this.name=n;
+        this.age=a;
+    }
+    message(phrase: string) {
+        console.log(`${phrase} ${this.name}`)
+    }
+}
+
+
+class SeniorManagers implements Person{
+    name:string;
+    age:number;
+    salary:number;
+    constructor(n:string,a:number,s:number)
+    {
+        this.name=n;
+        this.age=a;
+        this.salary=s;
+    }
+    message(phrase: string) {
+        console.log(`${phrase} ${this.name} you salary is ${this.salary}`);
+    }
+}
+
+const e=new Employee("Psy",24)
+const sm=new SeniorManagers('Alok',55,300000);
+console.log(sm.name);
+sm.message("hello");
+console.log(e.name);
+e.message("Hello");
